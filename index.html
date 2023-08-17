@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СПОСОБ ПРОГНОЗИРОВАНИЯ ВЫЖИВАЕМОСТИ БОЛЬНОГО ХРОНИЧЕСКОЙ СЕРДЕЧНОЙ НЕДОСТАТОЧНОСТЬЮ</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <h1>СПОСОБ ПРОГНОЗИРОВАНИЯ ВЫЖИВАЕМОСТИ<br>
+            БОЛЬНОГО ХРОНИЧЕСКОЙ СЕРДЕЧНОЙ НЕДОСТАТОЧНОСТЬЮ<br>
+            С НИЗКОЙ ФРАКЦИЕЙ ВЫБРОСА ЛЕВОГО ЖЕЛУДОЧКА<br>
+            В ТЕЧЕНИЕ 1 ГОДА</h1>
+        <pre>
+            S(t) = exp(-0.514056 *
+            exp(
+                (0.019 * heart_rate) +
+                (0.169 * 4 AA) +
+                (-0.049 * systolic_pressure) +
+                (0.000003 * concentration_N_peptide_blood_serum)
+                )
+            ) * 100%;
+        </pre>
+
+        <form action="" method="post">
+            <div class="var">
+                <label for="heart_rate"><span class="emph">ЧСС</span> - частота сердечных сокращений,
+                    мин<sup>-1</sup>:</label>
+                <input type="number" name="heart_rate" id="heart_rate">
+            </div>
+            <div class="var">
+                <label for="respiratory_rate"><span class="emph">ЧДД</span> - частота дыхательных движений,
+                    мин<sup>-1</sup>:</label>
+                <input type="number" name="respiratory_rate" id="respiratory_rate">
+            </div>
+            <div class="var">
+                <label for="systolic_pressure"><span class="emph">сист.АД</span> - уровень систолического артериального
+                    давления,
+                    измеренный на 3 - 5 минуте ортостаза, мм рт.ст.:</label>
+                <input type="number" name="systolic_pressure" id="systolic_pressure">
+            </div>
+            <div class="var">
+                <label for="concentration_N_peptide_blood_serum"><span class="emph">NT-proBNP</span> - концентрация N -
+                    концевого предшественника мозгового
+                    натрийуретического пептида в сыворотке крови, пг/мл:</label>
+                <input type="number" name="concentration_N_peptide_blood_serum"
+                    id="concentration_N_peptide_blood_serum">
+            </div>
+            <div class="var">
+                <label for="aa4">age</label>
+                <input type="number" name="aa4" id="aa4">
+            </div>
+            <input class="calc" type="submit" value="calc!">
+
+
+        </form>
+        <div class="res">
+            <p>S(t) = </p>
+            <div class="result"></div>
+        </div>
+
+        <p>при значениях S(t) более 80% считают прогноз выживаемости больного СНнФВ
+            в течение 1 года благоприятным, при значениях от 60 до 80% - неблагоприятным, менее
+            60% - крайне неблагоприятным.</p>
+    </div>
+
+    <script src="js/formula.js"></script>
+</body>
+
+</html>

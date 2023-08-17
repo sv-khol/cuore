@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wrap {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+    min-width: 400px;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+label {
+    width: 300px;
+    font-size: 12px;
+}
+
+.emph {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.var {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+input[type=number] {
+    padding: 8px;
+}
+
+.calc {
+    padding: 10px 30px;
+}
+
+.res {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.result {
+    font-size: 20px;
+}
