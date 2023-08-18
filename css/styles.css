@@ -4,10 +4,10 @@ body {
 }
 
 .wrap {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     max-width: 1200px;
-    min-width: 320px;
+    min-width: 300px;
 }
 
 h1 {
@@ -37,7 +37,9 @@ input[type=number] {
 }
 
 .calc {
-    padding: 10px 30px;
+    padding: 10px 50px;
+    background-color: #95e0a5;
+    border: 1px solid rgb(21, 26, 22);
 }
 
 .res {
