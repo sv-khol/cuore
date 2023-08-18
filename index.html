@@ -10,26 +10,22 @@
 
 <body>
     <div class="wrap">
-        <h1>СПОСОБ ПРОГНОЗИРОВАНИЯ ВЫЖИВАЕМОСТИ<br>
-            БОЛЬНОГО ХРОНИЧЕСКОЙ СЕРДЕЧНОЙ НЕДОСТАТОЧНОСТЬЮ<br>
-            С НИЗКОЙ ФРАКЦИЕЙ ВЫБРОСА ЛЕВОГО ЖЕЛУДОЧКА<br>
-            В ТЕЧЕНИЕ 1 ГОДА</h1>
+        <h1>СПОСОБ ПРОГНОЗИРОВАНИЯ ВЫЖИВАЕМОСТИ БОЛЬНОГО ХРОНИЧЕСКОЙ СЕРДЕЧНОЙ
+            НЕДОСТАТОЧНОСТЬЮ С НИЗКОЙ ФРАКЦИЕЙ ВЫБРОСА ЛЕВОГО ЖЕЛУДОЧКА</h1>
         <pre>
-            S(t) = exp(-0.514056 *
-            exp(
-                (0.019 * heart_rate) +
-                (0.169 * 4AA) +
-                (-0.049 * systolic_pressure) +
-                (0.000003 * concentration_N_peptide_blood_serum)
-                )
-            ) * 100%;
+            Z = (-0.075 * age) +
+                (0.290  * respiratory_rate) +
+                (-0.04  * systolic_pressure) +
+                (-0.051 * LYM) +
+                (0.161  * RDW)
         </pre>
 
         <form action="" method="post">
             <div class="var">
-                <label for="heart_rate"><span class="emph">ЧСС</span> - частота сердечных сокращений,
-                    мин<sup>-1</sup>:</label>
-                <input type="number" name="heart_rate" id="heart_rate">
+                <label for="age"><span class="emph">возраст дебюта СНнФВ</span> - возраст пациента, в котором
+                    дебютировала клиника
+                    СНнФВ, лет:</label>
+                <input type="number" name="age" id="age">
             </div>
             <div class="var">
                 <label for="respiratory_rate"><span class="emph">ЧДД</span> - частота дыхательных движений,
@@ -43,28 +39,23 @@
                 <input type="number" name="systolic_pressure" id="systolic_pressure">
             </div>
             <div class="var">
-                <label for="concentration_N_peptide_blood_serum"><span class="emph">NT-proBNP</span> - концентрация N -
-                    концевого предшественника мозгового
-                    натрийуретического пептида в сыворотке крови, пг/мл:</label>
-                <input type="number" name="concentration_N_peptide_blood_serum"
-                    id="concentration_N_peptide_blood_serum">
+                <label for="LYM"><span class="emph">LYM</span> - уровень лимфоцитов, %:</label>
+                <input type="number" name="LYM" id="LYM">
             </div>
             <div class="var">
-                <label for="aa4">age</label>
-                <input type="number" name="aa4" id="aa4">
+                <label for="RDW"><span class="emph">RDW</span> - ширина распределения эритроцитов по объему, %</label>
+                <input type="number" name="RDW" id="RDW">
             </div>
             <input class="calc" type="submit" value="calc!">
 
 
         </form>
         <div class="res">
-            <p>S(t) = </p>
+            <p>Z = </p>
             <div class="result"></div>
         </div>
 
-        <p>при значениях S(t) более 80% считают прогноз выживаемости больного СНнФВ
-            в течение 1 года благоприятным, при значениях от 60 до 80% - неблагоприятным, менее
-            60% - крайне неблагоприятным.</p>
+        <p>при Z > -1, 7 прогнозируют выживаемость менее 1 года,<br>при Z ≤ - 1, 7 - более 1 года.</p>
     </div>
 
     <script src="js/formula.js"></script>
